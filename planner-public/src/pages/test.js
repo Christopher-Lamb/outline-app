@@ -51,7 +51,7 @@ const TestPage = () => {
       {[0, 120, 240].map((num) => {
         const { addNum, subNum } = getCircularNumbers(num, 30);
         let children = [addNum, subNum];
-        console.log(children);
+        // console.log(children);
         return (
           <div className="flex flex-col max-w-3xl mt-3">
             <Block color={num} />

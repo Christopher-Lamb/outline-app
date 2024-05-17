@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import Navbar from "../components/Navbar";
-import { useTheme } from "../context/ThemeContext";
+// import { useTheme } from "../context/ThemeContext";
 import { Link } from "gatsby";
 import axios from "axios";
 import { IoIosAdd } from "react-icons/io";
@@ -12,7 +12,6 @@ import { setupDatabaseAndGetKeys, addOutlineToStore, deleteDataFromStore } from 
 //Will get the projects from files later
 
 const IndexPage = () => {
-  const { theme } = useTheme();
   const [outlinesJSON, setOutlinesJSON] = useState([]);
   const [outlinesDB, setOutlinesDB] = useState([]);
   const [addWindow, setAddWindow] = useState(false);
@@ -48,7 +47,7 @@ const IndexPage = () => {
     try {
       const response = await axios.post("http://localhost:3240/api/outline", { name: inputValue });
       const { completed, message } = response.data;
-      // console.log(message, completed);
+      // // console.log(message, completed);
       if (!completed) {
         const bool = confirm(`${inputValue} already exists would you like to write over this file?`);
         if (bool) {
@@ -61,7 +60,7 @@ const IndexPage = () => {
       //If our backend isnt set up we are storing to indexedDB
       addOutlineToStore(inputValue)
         .then((uid) => {
-          // console.log("Store added successfully");
+          // // console.log("Store added successfully");
           setOutlinesDB((prev) => [...prev, { title: inputValue, _id: uid }]);
         })
         .catch((error) => {
@@ -79,11 +78,11 @@ const IndexPage = () => {
     } catch (err) {
       deleteDataFromStore(delId)
         .then(() => {
-          console.log("Key deleted successfully");
+          // console.log("Key deleted successfully");
           setOutlinesDB((prevOutlines) => prevOutlines.filter((item) => item._id !== delId));
         })
         .catch((error) => console.error("Error deleting key:", error));
-      console.log("Error", err);
+      // console.log("Error", err);
     }
   };
 

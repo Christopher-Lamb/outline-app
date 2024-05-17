@@ -29,7 +29,7 @@ const OutlinePage = () => {
   const { setObj, setIsDragging, rowData, setId, setTitle } = useRowData();
   const [state, setState] = useState({ title: "", _id: "" });
 
-  let pathNames = window.location.pathname.split("/").filter((item) => item !== "");
+  let pathNames = typeof window !== "undefined" ? window.location.pathname.split("/").filter((item) => item !== "") : [];
   const pageName = pathNames.length > 0 ? pathNames[pathNames.length - 1] : undefined; // or some default value
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const OutlinePage = () => {
       .catch((error) => {
         getDataFromStore(pageName)
           .then((data) => {
-            console.log("Retrieved data:", data);
+            // console.log("Retrieved data:", data);
             setObj(data.data);
             setState({ title: data.title, _id: data._id });
             setId(data._id);

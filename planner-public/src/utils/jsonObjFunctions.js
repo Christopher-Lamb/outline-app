@@ -45,7 +45,7 @@ function deleteRowFunc(jsonData, rowIdToDelete) {
 
     return workingObj;
   } else {
-    console.log("Parent not found or the rowIdToDelete is a top-level node.");
+    // console.log("Parent not found or the rowIdToDelete is a top-level node.");
     return null;
   }
 }
@@ -67,7 +67,7 @@ function disableRowsFunc(obj, id, bool) {
 
       // Recursively disable all children
       jsonData[parentChildId].rowIds.forEach((childId) => {
-        // console.log(childId);
+        // // console.log(childId);
         recursivelyDisable(childId);
       });
     }

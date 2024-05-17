@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { useTheme } from "../context/ThemeContext";
+// import { useTheme } from "../context/ThemeContext";
 import { useRowData } from "../context/RowDataContext";
 
 // const links = [
@@ -8,7 +8,7 @@ import { useRowData } from "../context/RowDataContext";
 // ];
 
 const Navbar = ({ pageName }) => {
-  const { toggleTheme } = useTheme();
+  // const { toggleTheme } = useTheme();
 
   return (
     <div className="relative h-16 w-full bg-[var(--primary-color)] flex items-center justify-center">
@@ -26,7 +26,7 @@ const Navbar = ({ pageName }) => {
 };
 
 const DynamicNavbar = ({ pageName }) => {
-  const { toggleTheme } = useTheme();
+  // const { toggleTheme } = useTheme();
   const { setTitle, title } = useRowData();
 
   return (

@@ -26,7 +26,7 @@ export async function setupDatabaseAndGetKeys(options = { keyPath: "_id" }) {
     request.onsuccess = (event) => {
       const db = event.target.result;
 
-      console.log("db:\n\t", db); //console.log => db
+      // console.log("db:\n\t", db); //// console.log => db
 
       const transaction = db.transaction(storeName, "readonly");
       const store = transaction.objectStore(storeName);
@@ -95,7 +95,7 @@ export async function addOutlineToStore(title) {
       const addRequest = store.add({ _id: uniqueID, title, data: initialJSON });
 
       addRequest.onsuccess = () => {
-        console.log(`Data added successfully with key ${uniqueID}`);
+        // console.log(`Data added successfully with key ${uniqueID}`);
         resolve(uniqueID);
       };
 
@@ -140,7 +140,7 @@ export async function deleteDataFromStore(key) {
       const deleteRequest = store.delete(key);
 
       deleteRequest.onsuccess = () => {
-        console.log(`Data deleted successfully for key ${key}`);
+        // console.log(`Data deleted successfully for key ${key}`);
         resolve();
       };
 
@@ -178,10 +178,10 @@ export async function getDataFromStore(key) {
 
       getRequest.onsuccess = () => {
         if (getRequest.result !== undefined) {
-          console.log(`Data retrieved successfully for key ${key}`);
+          // console.log(`Data retrieved successfully for key ${key}`);
           resolve(getRequest.result);
         } else {
-          console.log("No data found for the key.");
+          // console.log("No data found for the key.");
           resolve(null); // Resolve as null if no data is found.
         }
       };

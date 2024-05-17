@@ -23,7 +23,7 @@ function findParentCount(jsonData, nodeId) {
       });
     }
   }
-  // console.log(childToParent);
+  // // console.log(childToParent);
   // Count the number of parents
   let parentCount = 0;
   let currentNode = nodeId;

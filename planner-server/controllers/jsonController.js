@@ -42,7 +42,7 @@ const checkFileInDir = (filename) => {
       isInDir = false;
     }
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
   return isInDir;
 };
@@ -58,9 +58,9 @@ const createJSONFile = (name, override, jsonString) => {
   } else {
     fs.writeFile(filePath, jsonString, (err) => {
       if (err) {
-        // console.log("Error writing file", err);
+        // // console.log("Error writing file", err);
       } else {
-        // console.log("Successfully wrote file ");
+        // // console.log("Successfully wrote file ");
       }
     });
     return true;
@@ -76,7 +76,7 @@ const deleteJSONFile = async (name) => {
       fs.unlinkSync(filePath);
       return { message: `File ${name}.json successfully deleted`, deleted: true };
     } else return { message: `${name}.json does not exist`, deleted: false };
-    // console.log("File successfully deleted");
+    // // console.log("File successfully deleted");
   } catch (err) {
     console.error("Error deleting the file:", err);
     return { message: err, deleted: false };
@@ -91,7 +91,7 @@ const getJSONFile = async (name) => {
       const data = fs.readFileSync(filePath, "utf-8");
       return { message: `File ${name}.json successfully got`, data: data };
     } else return { message: `${name}.json does not exist` };
-    // console.log("File successfully deleted");
+    // // console.log("File successfully deleted");
   } catch (err) {
     console.error("Error deleting the file:", err);
     return { message: err, data: "Error" };
