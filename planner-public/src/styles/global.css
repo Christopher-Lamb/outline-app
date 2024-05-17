@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #3d5a80;
+  --secondary-color: #98c1d9;
+  --third-color: #293241;
+  --background-color: #97b9cf;
+  --accent-color: #ee6c4d;
+  --primary-text: #eaeaea;
+  --drop-color: #c2d5e1;
+  --secondary-text: #2f2f39;
+  --third-text: #fff;
+  --accent-text: #fff;
+  --background-text: #1f1f1f;
+  --box-radius: 15px;
+  --box-border: 1px solid black;
+  --box-shadow: rgba(104, 109, 113, 0.2) 0px 8px 24px;
+  --input-border: 2px solid var(--accent-color);
+}
+
+body {
+  background: var(--background-color);
+  color: var(--background-text);
+}
+
+[data-theme="dark"] {
+  /* Your styles for dark theme here */
+  --primary-color: #3d5a80;
+  --secondary-color: #293241;
+  --third-color: #201f23;
+  --background-color: #293241;
+  --accent-color: #98c1d9;
+  --primary-text: #eaeaea;
+  --secondary-text: #e1e1e1;
+  --third-text: rgb(255, 255, 255)404;
+  --accent-text: #000;
+  --background-text: #eaeaea;
+  --box-radius: 15px;
+  --box-border: 1px solid black;
+  --box-shadow: rgba(104, 109, 113, 0.2) 0px 8px 24px;
+  --input-border: 1px solid var(--accent-color);
+}
+
+.primary {
+  background: var(--primary-color);
+  color: var(--primary-text);
+}
+.secondary {
+  background: var(--secondary-color);
+  color: var(--secondary-text);
+}
+.third {
+  background: var(--third-color);
+  color: var(--third-text);
+}
+.accent {
+  background: var(--accent-color);
+  color: var(--accent-text);
+}
+.background {
+  background: var(--background-color);
+  color: var(--background-text);
+}
+
+.row-item {
+  border-radius: var(--box-radius);
+  border-radius: var(--box-radius);
+  /* border: var(--box-border); */
+}
+
+.row-input {
+  border-radius: var(--box-radius);
+  border: var(--input-border);
+  background-color: var(--primary-color);
+  color: var(--primary-text);
+  box-shadow: var(--box-shadow);
+}
+
+.row-input-disabled {
+  border-radius: var(--box-radius);
+  border: 1px solid var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--secondary-text);
+}
+
+.del-btn {
+  opacity: 0;
+}
+.outline-cont:hover .del-btn {
+  opacity: 1;
+}
+
+.del-btn:hover {
+  border: 1px solid white;
+  border-radius: 5px;
+}

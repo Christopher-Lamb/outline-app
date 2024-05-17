@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+  "start": "concurrently \"npm run start-server\" \"npm run start-gatsby\"",
+  "start-server": "cd planner-server && npm start",
+  "start-gatsby": "cd planner-public && npm start"
+}
+}

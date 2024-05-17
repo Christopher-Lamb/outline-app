@@ -1,0 +1,9 @@
+{
+  "main": {
+    "id": "main",
+    "disabled": false,
+    "content": "Container Row",
+    "rowIds": ["row-1"]
+  },
+  "row-1": { "id": "row-1", "disabled": false, "completed": false, "content": "", "rowIds": [] }
+}
